@@ -65,6 +65,7 @@ class TopBar extends Component {
               color="inherit"
               href={button.link}
               onClick={button.onClick}
+              target="_blank"
               style={{ "text-decoration": "none", color: "#FFFFFF" }}
             >
               {button.icon}
