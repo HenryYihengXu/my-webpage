@@ -12,6 +12,7 @@ import GetAppIcon from "@material-ui/icons/GetApp";
 import Resume from "./components/resume";
 import TopBar from "./components/topBar";
 import DesktopMacIcon from "@material-ui/icons/DesktopMac";
+import QRCodeDialog from "./components/QRCodeDialog";
 
 const styles = theme => ({
   grow: {
@@ -22,33 +23,6 @@ const styles = theme => ({
   },
   toolbar: theme.mixins.toolbar
 });
-
-const topBarButtons = [
-  {
-    icon: <i class="fas fa-envelope"></i>,
-    link: "mailto:yiheng.xu.henry.1997@gmail.com"
-  },
-  {
-    icon: <i class="fab fa-github"></i>,
-    link: "https://github.com/HenryYihengXu/"
-  },
-  {
-    icon: <i class="fab fa-facebook"></i>,
-    link: "https://www.facebook.com/profile.php?id=100022096549292"
-  },
-  {
-    icon: <i class="fab fa-linkedin"></i>,
-    link: "https://www.linkedin.com/in/henry-xu-390636174/"
-  },
-  {
-    icon: <i class="fab fa-weixin"></i>,
-    link: null
-  },
-  {
-    icon: <i class="fab fa-qq"></i>,
-    link: null
-  }
-];
 
 const sideBarButtons = [
   {
@@ -91,18 +65,75 @@ const sideBarButtons = [
 
 class App extends Component {
   state = {
-    language: "English"
+    language: "English",
+    QQOpen: false,
+    weChatOpen: false
   };
-  handleClick = () => {
-    console.log("clicked");
+
+  handleWeChatClick = () => {
+    //console.log("weChat clicked");
+    this.setState({ weChatOpen: true });
   };
+
+  handleQQClick = () => {
+    //console.log("QQ clicked");
+    this.setState({ QQOpen: true });
+  };
+
+  handleWeChatClose = () => {
+    this.setState({ weChatOpen: false });
+  };
+
+  handleQQClose = () => {
+    this.setState({ QQOpen: false });
+  };
+
+  topBarButtons = [
+    {
+      icon: <i class="fas fa-envelope"></i>,
+      link: "mailto:yiheng.xu.henry.1997@gmail.com"
+    },
+    {
+      icon: <i class="fab fa-github"></i>,
+      link: "https://github.com/HenryYihengXu/"
+    },
+    {
+      icon: <i class="fab fa-facebook"></i>,
+      link: "https://www.facebook.com/profile.php?id=100022096549292"
+    },
+    {
+      icon: <i class="fab fa-linkedin"></i>,
+      link: "https://www.linkedin.com/in/henry-xu-390636174/"
+    },
+    {
+      icon: <i class="fab fa-weixin"></i>,
+      link: null,
+      onClick: this.handleWeChatClick
+    },
+    {
+      icon: <i class="fab fa-qq"></i>,
+      link: null,
+      onClick: this.handleQQClick
+    }
+  ];
+
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
+        <QRCodeDialog
+          open={this.state.weChatOpen}
+          onClose={this.handleWeChatClose}
+          img={require("./images/weChat.JPG")}
+        />
+        <QRCodeDialog
+          open={this.state.QQOpen}
+          onClose={this.handleQQClose}
+          img={require("./images/QQ.JPG")}
+        />
         <CssBaseline />
 
-        <TopBar buttons={topBarButtons} />
+        <TopBar buttons={this.topBarButtons} />
 
         <SideBar buttons={sideBarButtons} />
 

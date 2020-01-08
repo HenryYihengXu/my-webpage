@@ -64,6 +64,7 @@ class TopBar extends Component {
               aria-haspopup="true"
               color="inherit"
               href={button.link}
+              onClick={button.onClick}
             >
               {button.icon}
             </IconButton>

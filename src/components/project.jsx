@@ -6,7 +6,7 @@ import {
   ExpansionPanelDetails
 } from "./myExpansionPanel";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Divider } from "@material-ui/core";
+//import { Divider } from "@material-ui/core";
 
 const experienceNum = 7;
 
