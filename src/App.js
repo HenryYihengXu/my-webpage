@@ -72,14 +72,14 @@ const sideBarButtons = [
     href: "#research"
   },
   {
+    icon: <DesktopMacIcon style={{ color: "#FFFFFF" }} />,
+    name: "Project",
+    href: "#project"
+  },
+  {
     icon: <PublicIcon style={{ color: "#FFFFFF" }} />,
     name: "Activity",
     href: "#activity"
-  },
-  {
-    icon: <DesktopMacIcon style={{ color: "#FFFFFF" }} />,
-    name: "project",
-    href: "#project"
   },
   {
     icon: <GetAppIcon style={{ color: "#FFFFFF" }} />,

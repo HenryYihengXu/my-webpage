@@ -59,17 +59,17 @@ class Resume extends Component {
           <br />
 
           <h6>
-            <b>ACTIVITIES & LEADERSHIP</b>
-          </h6>
-          <Divider style={{ height: 2, background: grey[900] }} />
-          <Activity />
-          <br />
-
-          <h6>
             <b>PROJECTS</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
           <Project />
+          <br />
+
+          <h6>
+            <b>ACTIVITIES & LEADERSHIP</b>
+          </h6>
+          <Divider style={{ height: 2, background: grey[900] }} />
+          <Activity />
           <br />
         </main>
       </React.Fragment>

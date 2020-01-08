@@ -78,6 +78,7 @@ const ResearchExperience = () => {
                     <b>{researchExperience.title}</b>
                     <br />
                     <b>{researchExperience.topic}</b>
+                    {index === experienceNum - 1 ? <a id="project" /> : null}
                     <br />
                   </Grid>
                   <Grid item xs={4} style={{ textAlign: "right" }}>
@@ -103,9 +104,6 @@ const ResearchExperience = () => {
               <ul>
                 {researchExperience.achievements.map((achievement, index2) => (
                   <li key={index2}>
-                    {index === experienceNum - 1 && index2 === 1 ? (
-                      <a id="activity" />
-                    ) : null}
                     <font style={{ "font-family": "times" }}>
                       {achievement}
                     </font>

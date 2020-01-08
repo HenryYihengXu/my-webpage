@@ -8,6 +8,8 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Divider } from "@material-ui/core";
 
+const experienceNum = 7;
+
 const projects = [
   {
     name: "Personal Website",
@@ -131,10 +133,11 @@ const Project = () => {
                 {project.event ? (
                   <React.Fragment>
                     {project.event}
+                    {index === experienceNum - 1 ? <a id="activity" /> : null}
+
                     <br />
                   </React.Fragment>
                 ) : null}
-
                 <h12>
                   <font style={{ "font-family": "times" }}>
                     {project.summary}

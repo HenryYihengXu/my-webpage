@@ -69,6 +69,7 @@ const WorkExperience = () => {
                   </Grid>
                 </Grid>
                 <h12>{workExperience.organization}</h12>
+                {index === experienceNum - 1 ? <a id="research" /> : null}
                 <br />
                 {workExperience.summary ? (
                   <React.Fragment>
@@ -90,13 +91,13 @@ const WorkExperience = () => {
               }}
             >
               <ul
-               //style ={{background:"#FFFF00"}}
+              //style ={{background:"#FFFF00"}}
               >
                 {workExperience.achievements.map((achievement, index2) => (
                   <li key={index2}>
-                    {index === experienceNum - 1 && index2 === 1 ? (
+                    {/* {index === experienceNum - 2 && index2 === 3 ? (
                       <a id="research" />
-                    ) : null}
+                    ) : null} */}
                     <font style={{ "font-family": "times" }}>
                       {achievement}
                     </font>
@@ -107,6 +108,7 @@ const WorkExperience = () => {
           </ExpansionPanel>
           {/* <Divider style={{background:"#FFFFFF", height:8}}/> */}
           <br />
+          {/* {index === experienceNum - 2 ? <a id="research" /> : null} */}
         </React.Fragment>
       ))}
     </React.Fragment>
