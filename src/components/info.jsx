@@ -27,12 +27,16 @@ const Info = () => {
         </h6>
         <br />
       </div>
+      <Typography paragraph>Welcome to my personal webpage!!!</Typography>
+      <a id="education" />
       <Typography paragraph>
-        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-        ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum
-        integer enim neque volutpat ac tincidunt.
-        <a id="education" /> Ornare suspendisse sed nisi lacus sed viverra
-        tellus. Purus sit amet volutpat consequat
+        My name is Yiheng Xu. You can also call me Henry. I'm currently a senior
+        computer science major student at University of Wisconsin-Madison. In
+        this webpage, you can get the basic information about me. You can also
+        get connected to me via social medias by clicking the buttons. If you
+        would like to know more about my hobbies, my philosophy, and my life, go
+        to my tyuni webpage (in the future, it's under construction lol). Feel
+        free to walk around and enjoy your time here!
       </Typography>{" "}
     </React.Fragment>
   );
