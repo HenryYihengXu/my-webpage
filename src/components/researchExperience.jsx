@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
+import {
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails
+} from "./myExpansionPanel";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const experienceNum = 3;
 
@@ -50,39 +56,66 @@ const ResearchExperience = () => {
     <React.Fragment>
       {researchExperiences.map((researchExperience, index) => (
         <React.Fragment>
-          <Grid
-            container
-            style={{
-              background: "#FFFFFF"
-            }}
-          >
-            <Grid item xs={8}>
-              <b>{researchExperience.title}</b>
-              <br />
-              <b>{researchExperience.topic}</b>
-              <br />
-            </Grid>
-            <Grid item xs={4} style={{ textAlign: "right" }}>
-              <b>{researchExperience.time}</b>
-              <br />
-              <b>Supervisor:&nbsp;</b>
-              <h12>{researchExperience.supervisor}</h12>
-              <br />
-            </Grid>
-          </Grid>
-          <b>Goal:&nbsp;</b>
-          <h12>{researchExperience.goal}</h12>
+          <ExpansionPanel>
+            <ExpansionPanelSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <div
+                style={{
+                  flex: 1,
+                  background: "#FFFFFF"
+                }}
+              >
+                <Grid
+                  container
+                  style={{
+                    background: "#FFFFFF"
+                  }}
+                >
+                  <Grid item xs={8}>
+                    <b>{researchExperience.title}</b>
+                    <br />
+                    <b>{researchExperience.topic}</b>
+                    <br />
+                  </Grid>
+                  <Grid item xs={4} style={{ textAlign: "right" }}>
+                    <b>{researchExperience.time}</b>
+                    <br />
+                    <b>Supervisor:&nbsp;</b>
+                    <h12>{researchExperience.supervisor}</h12>
+                    <br />
+                  </Grid>
+                </Grid>
+                <b>Goal:&nbsp;</b>
+                <h12>{researchExperience.goal}</h12>
+                <br />
+              </div>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails
+              style={{
+                //background: "#FFFF00",
+                padding: 0,
+                margin: 0
+              }}
+            >
+              <ul>
+                {researchExperience.achievements.map((achievement, index2) => (
+                  <li key={index2}>
+                    {index === experienceNum - 1 && index2 === 1 ? (
+                      <a id="activity" />
+                    ) : null}
+                    <font style={{ "font-family": "times" }}>
+                      {achievement}
+                    </font>
+                  </li>
+                ))}
+              </ul>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          {/* <Divider style={{ background: "#FFFFFF", height: 8 }} /> */}
           <br />
-          <ul>
-            {researchExperience.achievements.map((achievement, index2) => (
-              <li key={index2}>
-                {index === experienceNum - 1 && index2 === 1 ? (
-                  <a id="activity" />
-                ) : null}
-                <font style={{ "font-family": "times" }}>{achievement}</font>
-              </li>
-            ))}
-          </ul>
         </React.Fragment>
       ))}
     </React.Fragment>

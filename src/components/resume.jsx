@@ -13,6 +13,7 @@ import WorkExperience from "./workExperience";
 import ResearchExperience from "./researchExperience";
 import Activity from "./activity";
 import Info from "./info";
+import Project from "./project";
 
 const styles = theme => ({
   grow: {
@@ -62,6 +63,14 @@ class Resume extends Component {
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
           <Activity />
+          <br />
+
+          <h6>
+            <b>PROJECTS</b>
+          </h6>
+          <Divider style={{ height: 2, background: grey[900] }} />
+          <Project />
+          <br />
         </main>
       </React.Fragment>
     );

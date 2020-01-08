@@ -11,6 +11,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import Resume from "./components/resume";
 import TopBar from "./components/topBar";
+import DesktopMacIcon from "@material-ui/icons/DesktopMac";
 
 const styles = theme => ({
   grow: {
@@ -74,6 +75,11 @@ const sideBarButtons = [
     icon: <PublicIcon style={{ color: "#FFFFFF" }} />,
     name: "Activity",
     href: "#activity"
+  },
+  {
+    icon: <DesktopMacIcon style={{ color: "#FFFFFF" }} />,
+    name: "project",
+    href: "#project"
   },
   {
     icon: <GetAppIcon style={{ color: "#FFFFFF" }} />,
