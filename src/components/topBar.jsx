@@ -54,7 +54,7 @@ class TopBar extends Component {
             <i class="fas fa-home"></i>
           </IconButton>
           <Typography className={classes.appBarTitle} variant="h6" noWrap>
-            Yiheng Xu
+            {this.props.language === "Chinese" ? "徐一恒" : "Yiheng Xu"}
           </Typography>
           <div className={classes.grow}></div>
           {this.props.buttons.map(button => (
@@ -73,7 +73,7 @@ class TopBar extends Component {
           ))}
 
           <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-          <LanguageSwitch />
+          <LanguageSwitch onChange={this.props.onChange} />
         </Toolbar>
       </AppBar>
     );

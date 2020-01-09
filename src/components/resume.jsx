@@ -35,11 +35,11 @@ const titlesEnglish = {
 };
 
 const titlesChinese = {
-  education: "EDUCATION",
-  work: "WORK EXPERIENCE",
-  research: "RESEARCH EXPERIENCE",
-  project: "PROJECTS",
-  activity: "ACTIVITIES & LEADERSHIP"
+  education: "教育经历",
+  work: "工作经历",
+  research: "科研经历",
+  project: "项目",
+  activity: "社团社会活动"
 };
 
 class Resume extends Component {
@@ -57,41 +57,41 @@ class Resume extends Component {
         <a id="info" />
         <main className={classes.content} style={{ background: "#FFFFFF" }}>
           <div className={classes.toolbar} />
-          <Info />
+          <Info language={this.props.language}/>
           <br />
           <h6>
             <b>{titles.education}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
-          <Education />
+          <Education language={this.props.language}/>
           <br />
 
           <h6>
             <b>{titles.work}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
-          <WorkExperience />
+          <WorkExperience language={this.props.language}/>
           <br />
 
           <h6>
-            <b>RESEARCH EXPERIENCE</b>
+            <b>{titles.research}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
-          <ResearchExperience />
+          <ResearchExperience language={this.props.language}/>
           <br />
 
           <h6>
-            <b>PROJECTS</b>
+            <b>{titles.project}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
-          <Project />
+          <Project language={this.props.language}/>
           <br />
 
           <h6>
-            <b>ACTIVITIES & LEADERSHIP</b>
+            <b>{titles.activity}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
-          <Activity />
+          <Activity language={this.props.language}/>
           <br />
         </main>
       </React.Fragment>

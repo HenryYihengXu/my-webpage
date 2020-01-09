@@ -5,13 +5,13 @@ import Switch from "@material-ui/core/Switch";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-const LanguageSwitch = () => {
+const LanguageSwitch = (props) => {
   return (
     <Typography>
       <Grid component="label" container alignItems="center" spacing={1}>
         <Grid item>Eng</Grid>
         <Grid item>
-          <MySwitch />
+          <MySwitch onChange={props.onChange} />
         </Grid>
         <Grid item>中</Grid>
       </Grid>

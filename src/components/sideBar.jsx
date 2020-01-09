@@ -26,7 +26,7 @@ const styles = theme => ({
     flexShrink: 0
   },
   drawerPaper: {
-    background: grey[900],//lightBlue["A100"],
+    background: grey[900], //lightBlue["A100"],
     width: drawerWidth
     //color: "#FFFFFF"
   },
@@ -55,14 +55,7 @@ class SideBar extends Component {
             textAlign: "center"
           }}
         >
-          <img
-            src={require("../images/3.PNG")}
-            style={{
-              width: 220,
-              height: 220,
-              padding: 10
-            }}
-          />
+          {this.props.children}
         </div>
         <Divider />
         <List>

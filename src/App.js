@@ -24,40 +24,40 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar
 });
 
-const sideBarButtons = [
+const sideBarButtons = language => [
   {
     icon: <AccountCircleIcon style={{ color: "#FFFFFF" }} />,
-    name: "Info",
+    name: language === "Chinese" ? "基本信息" : "Info",
     href: "#info"
   },
   {
     icon: <SchoolIcon style={{ color: "#FFFFFF" }} />,
-    name: "Education",
+    name: language === "Chinese" ? "教育经历" : "Education",
     href: "#education"
   },
   {
     icon: <WorkIcon style={{ color: "#FFFFFF" }} />,
-    name: "Work",
+    name: language === "Chinese" ? "工作经历" : "Work",
     href: "#work"
   },
   {
     icon: <PageviewIcon style={{ color: "#FFFFFF" }} />,
-    name: "Research",
+    name: language === "Chinese" ? "科研经历" : "Research",
     href: "#research"
   },
   {
     icon: <DesktopMacIcon style={{ color: "#FFFFFF" }} />,
-    name: "Project",
+    name: language === "Chinese" ? "项目经历" : "Project",
     href: "#project"
   },
   {
     icon: <PublicIcon style={{ color: "#FFFFFF" }} />,
-    name: "Activity",
+    name: language === "Chinese" ? "社会活动" : "Activity",
     href: "#activity"
   },
   {
     icon: <GetAppIcon style={{ color: "#FFFFFF" }} />,
-    name: "CV",
+    name: language === "Chinese" ? "简历下载" : "CV",
     href: "CV.Xu.Yiheng.pdf",
     download: true
   }
@@ -86,6 +86,14 @@ class App extends Component {
 
   handleQQClose = () => {
     this.setState({ QQOpen: false });
+  };
+
+  handleLanguageChange = () => {
+    if (this.state.language === "English") {
+      this.setState({ language: "Chinese" });
+    } else {
+      this.setState({ language: "English" });
+    }
   };
 
   topBarButtons = [
@@ -133,11 +141,26 @@ class App extends Component {
         />
         <CssBaseline />
 
-        <TopBar buttons={this.topBarButtons} />
+        <TopBar
+          buttons={this.topBarButtons}
+          language={this.state.language}
+          onChange={this.handleLanguageChange}
+        />
 
-        <SideBar buttons={sideBarButtons} />
-
-        <Resume />
+        <SideBar
+          buttons={sideBarButtons(this.state.language)}
+          language={this.state.language}
+        >
+          <img
+            src={require("./images/3.PNG")}
+            style={{
+              width: 220,
+              height: 220,
+              padding: 10
+            }}
+          />
+        </SideBar>
+        <Resume language={this.state.language} />
       </div>
     );
   }
