@@ -26,10 +26,32 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar
 });
 
+const titlesEnglish = {
+  education: "EDUCATION",
+  work: "WORK EXPERIENCE",
+  research: "RESEARCH EXPERIENCE",
+  project: "PROJECTS",
+  activity: "ACTIVITIES & LEADERSHIP"
+};
+
+const titlesChinese = {
+  education: "EDUCATION",
+  work: "WORK EXPERIENCE",
+  research: "RESEARCH EXPERIENCE",
+  project: "PROJECTS",
+  activity: "ACTIVITIES & LEADERSHIP"
+};
+
 class Resume extends Component {
   state = {};
   render() {
     const { classes } = this.props;
+    let titles;
+    if (this.props.language === "Chinese") {
+      titles = titlesChinese;
+    } else {
+      titles = titlesEnglish;
+    }
     return (
       <React.Fragment>
         <a id="info" />
@@ -38,14 +60,14 @@ class Resume extends Component {
           <Info />
           <br />
           <h6>
-            <b>EDUCATION</b>
+            <b>{titles.education}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
           <Education />
           <br />
 
           <h6>
-            <b>WORK EXPERIENCE</b>
+            <b>{titles.work}</b>
           </h6>
           <Divider style={{ height: 2, background: grey[900] }} />
           <WorkExperience />
