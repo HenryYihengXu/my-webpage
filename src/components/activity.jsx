@@ -8,7 +8,7 @@ import {
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 //import { Divider } from "@material-ui/core";
 
-const activities = [
+const activitiesEnglish = [
   {
     title: "Volunteer",
     organization: "Student Today Lead Forever, UW-Madison",
@@ -24,7 +24,7 @@ const activities = [
   {
     title: "Vice President",
     organization: "Debate Team of School of Computer Science, WHU",
-    time: "09/2017-06/2018",
+    time: "09/2017–06/2018",
     summary:
       "Led the team to play competitions, and do all logistics to administrate the team",
     achievements: [
@@ -47,7 +47,49 @@ const activities = [
   }
 ];
 
-const Activity = () => {
+const activitiesChinese = [
+  {
+    title: "志愿者",
+    organization: "Student Today Lead Forever, 美国威斯康星大学麦迪逊分校",
+    time: "03/2019",
+    summary: "参加了该志愿者组织的志愿服务之旅，到多个不同城市做了志愿者活动",
+    achievements: [
+      "在Louisville, Kentucky帮助当地环境组织清理外来入侵植物",
+      "在Asheville, North Carolina帮助一所特殊儿童学校布置庭院",
+      "在Charleston, South Carolina帮助环境组织建生蚝壳水坝，起到过滤净化河水的作用"
+    ]
+  },
+  {
+    title: "副队长",
+    organization: "武汉大学计算机学院辩论队",
+    time: "09/2017–06/2018",
+    summary: "带队参加比赛，训练新人，管理队中事务",
+    achievements: [
+      "训练新辩手，使他们熟悉辩论技巧，带队参加校内比赛",
+      "2017年武汉大学新生辩论赛团队第一名，多次获得最佳辩手",
+      "组织E鸣杯辩论赛，担任主持、评委，参与出辩题"
+    ]
+  },
+  {
+    title: "拉赞助活动的组织者",
+    organization: "武汉大学计算机学院学生会外联部",
+    time: "09/2016",
+    summary: "联系并和校外组织协调以获得赞助",
+    achievements: [
+      "为迎新晚会从一家网咖拉到2000元的赞助",
+      "负责拉赞助的策划和合同撰写",
+      "联系了联想、苹果、以及多家网咖，与他们讨论赞助方案"
+    ]
+  }
+];
+
+const Activity = props => {
+  let activities;
+  if (props.language === "Chinese") {
+    activities = activitiesChinese;
+  } else {
+    activities = activitiesEnglish;
+  }
   return (
     <React.Fragment>
       {activities.map((activity, index) => (

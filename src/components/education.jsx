@@ -4,11 +4,11 @@ import Grid from "@material-ui/core/Grid";
 
 const educationNum = 3;
 
-const educations = [
+const educationsEnglish = [
   {
     school: "School of Letter & Science, UW-Madison, US",
     time: "09/2018–05/2020",
-    major: "Computer Science. Major 2: Applied Math",
+    major: "Major 1: Computer Science. Major 2: Applied Math",
     GPA: "GPA: 4.0/4.0"
   },
   {
@@ -27,7 +27,36 @@ const educations = [
   }
 ];
 
+const educationsChinese = [
+  {
+    school: "美国威斯康星大学麦迪逊分校",
+    time: "09/2018–05/2020",
+    major: "专业1：计算机科学，专业2：应用数学",
+    GPA: "GPA: 4.0/4.0"
+  },
+  {
+    school: "武汉大学",
+    time: "09/2016–07/2018",
+    major: "专业：计算机科学与技术",
+    GPA: "GPA: 3.97/4.0",
+    scholarship: "武汉大学国家奖学金",
+    scholarshipTime: "10/2017"
+  },
+  {
+    school: "BGA交流项目，加州大学伯克利分校Extension",
+    time: "08/2017–12/2017",
+    major: "专业：计算机科学",
+    GPA: "GPA: 4.0/4.0"
+  }
+];
+
 const Education = props => {
+  let educations;
+  if (props.language === "Chinese") {
+    educations = educationsChinese;
+  } else {
+    educations = educationsEnglish;
+  }
   return (
     <Grid
       container

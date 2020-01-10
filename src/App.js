@@ -152,7 +152,7 @@ class App extends Component {
           language={this.state.language}
         >
           <img
-            src={require("./images/3.PNG")}
+            src={require("./images/portrait.jpg")}
             style={{
               width: 220,
               height: 220,

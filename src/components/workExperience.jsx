@@ -10,7 +10,7 @@ import { Divider } from "@material-ui/core";
 
 const experienceNum = 2;
 
-const workExperiences = [
+const workExperiencesEnglish = [
   {
     title: "Algorithm Engineering Intern",
     time: "06/2019–09/2019",
@@ -38,7 +38,39 @@ const workExperiences = [
   }
 ];
 
-const WorkExperience = () => {
+const workExperiencesChinese = [
+  {
+    title: "算法工程师实习",
+    time: "06/2019–09/2019",
+    organization: "中国科学院计算技术研究所，中国北京",
+    summary: "基于x86架构的高性能FFT开源算法库开发",
+    achievements: [
+      "基于x86系统架构，通过修改内存分配、地址计算、缓存使用，优化了已有的底层汇编代码，并且实现了核心的“split”函数",
+      "找出了代码性能低的原因，利用SIMD、循环展开、多线程编程，重构了部分汇编代码",
+      "设计了一个更快的REDFT00变换算法，成功降低了计算复杂度，并且给出了严密的数学证明",
+      "在算法库中实现了该新算法，使得性能显著提高，尤其是较大数据输入的性能已经超过了MKL和FFTW的相应性能"
+    ]
+  },
+  {
+    title: "CS 577 算法课本科生助教",
+    time: "01/2019–05/2019",
+    organization: "美国威斯康星大学麦迪逊分校计算机学院",
+    summary: "协助教授给学生提供更多学习资源和帮助",
+    achievements: [
+      "每周根据课上内容带复习课，指导学生做练习题",
+      "提供一对一答疑课，根据学生的问题针对性解决疑惑，并提供反馈",
+      "出练习题，在线回答问题"
+    ]
+  }
+];
+
+const WorkExperience = props => {
+  let workExperiences;
+  if (props.language === "Chinese") {
+    workExperiences = workExperiencesChinese;
+  } else {
+    workExperiences = workExperiencesEnglish;
+  }
   return (
     <React.Fragment>
       {workExperiences.map((workExperience, index) => (

@@ -50,6 +50,7 @@ class TopBar extends Component {
             color="inherit"
             aria-label="open drawer"
             href="/"
+            style={{ "text-decoration": "none", color: "#FFFFFF" }}
           >
             <i class="fas fa-home"></i>
           </IconButton>
