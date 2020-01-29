@@ -111,7 +111,7 @@ class App extends Component {
     },
     {
       icon: <i class="fab fa-linkedin"></i>,
-      link: "https://www.linkedin.com/in/henry-xu-390636174/"
+      link: "https://www.linkedin.com/in/yiheng-xu-390636174/"
     },
     {
       icon: <i class="fab fa-weixin"></i>,

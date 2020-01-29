@@ -43,6 +43,7 @@ class SideBar extends Component {
         classes={{
           paper: classes.drawerPaper
         }}
+        open={false}
       >
         <div
           className={classes.toolbar}
